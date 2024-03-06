@@ -7,18 +7,15 @@ function NewsletterRegistration() {
 
   function registrationHandler(event) {
     event.preventDefault();
-
-    const enteredEmail = emailInputRef.current.value;
-
+    const enteredEmail = emailInputRef.current.value
     fetch('/api/newsletter', {
       method: 'POST',
-      body: JSON.stringify({ email: enteredEmail }),
+      body: JSON.stringify({email: enteredEmail}),
       headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+        'Content-Type': 'application/json'
+      }
+    }).then((response) => response.json())
+    .then((data) => console.log(data))
   }
 
   return (
@@ -33,7 +30,7 @@ function NewsletterRegistration() {
             aria-label='Your email'
             ref={emailInputRef}
           />
-          <button>Register</button>
+          <button type="submit">Register</button>
         </div>
       </form>
     </section>

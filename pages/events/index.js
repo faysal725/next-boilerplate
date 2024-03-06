@@ -1,5 +1,6 @@
 import EventList from '@/components/events/EventList'
 import EventsSearch from '@/components/events/events-search'
+import NewsletterRegistration from '@/components/input/newsletter-registration'
 import { getAllEvents, getFeaturedEvents } from '@/helpers/api-utils'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -21,7 +22,8 @@ export default function EventsPage(props) {
         <title>All Events</title>
         <meta name="description" content="find a lot of events"  />
       </Head>
-        <EventsSearch onSearch={findEventsHandler} />
+        {/* <EventsSearch onSearch={findEventsHandler} /> */}
+        <NewsletterRegistration />
         <EventList items={events} />
     </Fragment>
   )
